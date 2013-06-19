@@ -1,5 +1,7 @@
 =pod
 
+=encoding utf8
+
 =head2 BIVEE MOJOLICIOUS BASE
 
 Este repositório contem o esqueleto de um projeto mojolicious alterado para seguir o padrão interno dos projetos da empresa Bivee e para 
@@ -36,7 +38,7 @@ e o template para o respectivo diretório (home/index.html.ep)
 
 =item B<Melhorias no layouts>
 
-O arquivo L</layouts/default.html.ep> que antes era simples contendo
+O arquivo F<"/layouts/default.html.ep"> que antes era simples contendo
 somente a estrutura básica do HTML agora possui o load do jquery
 e do twitter bootstrap por padrão.
 
