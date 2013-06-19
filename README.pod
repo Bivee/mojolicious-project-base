@@ -2,18 +2,15 @@
 
 =head2 BIVEE MOJOLICIOUS BASE
 
-Este repositório contem o esqueleto de um projeto mojolicious alterado
-para seguir o padrão interno dos projetos da empresa Bivee e para 
+Este repositório contem o esqueleto de um projeto mojolicious alterado para seguir o padrão interno dos projetos da empresa Bivee e para 
 simplificar o start up dos projetos internos.
 
 =head3 O QUE HÁ DE NOVO?
 
 Não ha nada de mais... nada mesmo!
 
-Fizemos apenas algumas adaptações e criamos alguns diretórios, 
-renomeamos arquivos e criamos paths para organizar de forma mais 
-"intuitiva" a estrutura padrão do esqueleto do projeto de 
-mojolicious non-lite.
+Fizemos apenas algumas adaptações e criamos alguns diretórios, renomeamos arquivos e criamos paths para organizar de forma mais 
+"intuitiva" a estrutura padrão do esqueleto do projeto de mojolicious non-lite.
 
 =head3 ALTERAÇÕES
 
