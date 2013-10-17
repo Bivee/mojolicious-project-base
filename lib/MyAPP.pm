@@ -2,22 +2,31 @@ package MyAPP;
 use Mojo::Base 'Mojolicious';
 
 use MyAPP::Routes;
+use MyAPP::Authentication;
 
 sub startup {
     my $self = shift;
+
+    # load auth plugin
+    $self->plugin('authentication' => {
+        'autoload_user' => 1,
+        'session_key' => 'my_eureka_portal_bitch',
+        'load_user' => sub {
+           return MyAPP::Authentication->load_user(@_);
+        },
+        'validate_user' => sub {
+           return MyAPP::Authentication->validate_user(@_);
+        },
+    });
 
     # Router
     my $r = $self->routes;
     $r->namespaces( ['MyAPP::Controller'] );
 
-    # Normal route to controller
-    $r->any('/')->to('home#index');
+    # default route to controller
+    $r->get('/')->to('Home#index');
 
-    # configure custom routes
     MyAPP::Routes->load($r);
-
-    $r->any('/:controller/:action/:id')
-      ->to( controller => 'home', action => 'index', id => 0 );
 }
 
 1;

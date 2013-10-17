@@ -10,35 +10,64 @@ sub load {
 
     # custom routes
     my $custom = {
+        # route for /profile
+        '/profile' => 
+            {controller=>'Home', action=>'profile', authenticated=>1},
+
+        # route for /user/edit/0
+        '/:controller/:action/:id' => 
+            {controller=>'Home', action=>'index', id=>0},
+
+
         #add custom route here
     };
 
     # add routes
-    $route->any($_)->to( $custom->{$_} ) for keys %$custom;
+    $route->any($_)->over(authenticated => $custom->{$_}->{authenticated} || 0)->to( $custom->{$_} )
+        for keys %$custom;
 
     return $route;
 }
 
 1;
 
-                                                                                                                                                                                            __END__
+__END__
+=pod 
 
-                                                                                                                                                                                            =pod
+=head1 NAME
 
-                                                                                                                                                                                            =head1 NAME
+MyAPP::Routes - Route container for MyAPP app
 
-                                                                                                                                                                                            Site::Routes
 
-                                                                                                                                                                                            =head1 DESCRIPTION
+=head1 DESCRIPTION
 
-                                                                                                                                                                                            Classe responsável pela configuração de todas as rotas
-                                                                                                                                                                                            customizadas da aplicação.
+This class is a simple container where you will add all your custom routes 
+used at your MyAPP app.
 
-                                                                                                                                                                                            Utilize esta classe sempre que necessário adicionar uma
-                                                                                                                                                                                            nova rota neste site.
 
-                                                                                                                                                                                            =head1 SEE ALSO
+=head2 Methods
 
-                                                                                                                                                                                            L<Mojolicious>, L<Mojolicious::Routes>
 
-                                                                                                                                                                                            =cut
+=head3 load(L<Mojolicious::Routes> instance)
+
+    package MyAPP::Routes;
+
+    # config custom routes to Mojolicious::Routes
+    my $r = $self->routes;
+    MyAPP::Routes->load($r);
+
+
+=head1 AUTHOR
+
+2013 (c) Bivee
+
+L<http://bivee.com.br>
+
+=head1 COPYRIGHT AND LICENSE
+
+2013 (c) Bivee
+
+This is a free software; you can redistribute it and/or modify it under the same terms 
+as a Perl 5 programming language system itself.
+
+=cut
