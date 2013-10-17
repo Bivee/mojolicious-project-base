@@ -2,51 +2,69 @@
 
 =encoding utf8
 
-=head2 BIVEE MOJOLICIOUS BASE
+=head2 BIVEE MOJOLICIOUS WEB APP BASE
 
-Este repositório contem o esqueleto de um projeto mojolicious alterado para seguir o padrão interno dos projetos da empresa Bivee e para 
-simplificar o start up dos projetos internos.
+Este repositório contem o esqueleto de um projeto mojolicious alterado para seguir 
+um padrão interno dos projetos da empresa Bivee e para simplificar o start dos 
+projetos internos.
 
-=head3 O QUE HÁ DE NOVO?
 
-Não ha nada de mais... nada mesmo!
+=head3 Porque tudo isso?
 
-Fizemos apenas algumas adaptações e criamos alguns diretórios, renomeamos arquivos e criamos paths para organizar de forma mais 
-"intuitiva" a estrutura padrão do esqueleto do projeto de mojolicious non-lite.
+Notamos que havia uma serie de alterações padrão que fazíamos antes de iniciar os
+projetos de desenvolvimento web internos da nossa empresa e resolvemos criar um
+bootstrap mais efetivo baseado no L<Mojolicious> para agilizar o processo.
 
-=head3 ALTERAÇÕES
+Na verdade isso é apenas um conjunto de praticas e pre implementações que gostamos
+de utilizar e aperfeiçoar e gostaríamos de compartilhar com a comunidade afim de 
+que possa ser útil para mais alguém.
 
-=over 4
 
-=item B<Namespace Controller>
+=head3 O que há de novo?
 
-A estrutura de diretório dos módulos da camada de controller que
-antes era abrigado em /MyAPP agora fica em /MyAPP/Controller e 
-todas as classes de controller devem estar neste namespace.
+=over 
 
-=item B<Namespace Model>
+=item Diretório e Namespace C<Controller>
 
-Tendo movido as classes da camada de controller para um namespace
-mais "apropriado", criamos o namespace MyAPP::Model no path
-/MyAPP/Model.
+Criamos um diretório e um namespace MyAPP::Controller para organizar melhor as 
+classes.
 
-=item B<Default Route>
 
-A rota default para onde o L<localhost:3000> apontava ficava em
-MyAPP::Example::welcome e agora mudamos para MyAPP::Controller::Home::index
-e o template para o respectivo diretório (home/index.html.ep)
+=item Diretório e Namespace C<Model>
 
-=item B<Melhorias no layouts>
+Criamos um diretório e um namespace MyAPP::Model onde as classes destinadas a este 
+fim poderão ser mantidas. O plus aqui é que usamos por padrão o L<ObjectDB> mas que
+pode ser substituído por qualquer ORM e adicionamos um loader para as classes do
+namespace model
 
-O arquivo F<"/layouts/default.html.ep"> que antes era simples contendo
-somente a estrutura básica do HTML agora possui o load do jquery
-e do twitter bootstrap por padrão.
+
+=item Classe para a configuração das rotas
+
+As rotas são coisas bem importantes, principalmente nos dias de hoje, então damos 
+uma atenção especial a elas criando uma classe especial onde as mesmas podem ser
+configuradas de forma mais "particular" ao resto do startup da aplicação.
+
+
+=item Layout padrão com jquery e twitter bootstrap
+
+O arquivo de layout padrão que antes era simples contendo somente a estrutura básica 
+do HTML agora possui o load do jquery e do twitter bootstrap.
 
 =back
 
-=head3 AUTHOR
+
+=head3 Author 
+
+2013 (c) Bivee L<http://bivee.com.br>
 
 Daniel Vinciguerra <daniel.vinciguerra at bivee.com.br>
-2013 (c) Bivee.
+
+
+=head3 Copyright and License
+
+This software is copyright (c) 2013 by Bivee.
+
+This is a free software; you can redistribute it and/or modify it under the same terms of Perl 5 programming 
+languagem system itself.
 
 =cut
