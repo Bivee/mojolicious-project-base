@@ -1,63 +1,81 @@
+
 =pod
 
 =encoding utf8
 
-=head2 BIVEE MOJOLICIOUS WEB APP BASE
+=head2 Bivee Mojolicious WebApp Base
 
-Este repositório contem o esqueleto de um projeto mojolicious alterado para seguir 
-um padrão interno dos projetos da empresa Bivee e para simplificar o start dos 
-projetos internos.
+Este repositório contem o esqueleto de um projeto mojolicious alterado para seguir um padrão interno dos projetos da empresa Bivee e para simplificar o start de projetos.
+
+A ideia é montar uma arquitetura, plugins, configurações, classes, etc..  que são geralmente criadas no começo de todo projeto para que o desenvolvedor gaste menos tempo customizando e configurando a base que o command line helper do mojolicious cria por padrão.
 
 
 =head3 Porque tudo isso?
 
-Notamos que havia uma serie de alterações padrão que fazíamos antes de iniciar os
-projetos de desenvolvimento web internos da nossa empresa e resolvemos criar um
-bootstrap mais efetivo baseado no L<Mojolicious> para agilizar o processo.
-
-Na verdade isso é apenas um conjunto de praticas e pre implementações que gostamos
-de utilizar e aperfeiçoar e gostaríamos de compartilhar com a comunidade afim de 
-que possa ser útil para mais alguém.
+Notamos que havia uma serie de alterações comuns que fazíamos em todo projeto de desenvolvimento web e resolvemos criar um bootstrap mais efetivo baseado na que é gerada pelo command line helper do Mojolicious para agilizar o processo.
 
 
-=head3 O que há de novo?
+=head3 Como usar?
+
+Como podemos utilizar essa base e iniciar nosso projeto de forma mais rápida:
+
+Primeiro vamos clonar esse repositório e criar o workspace do nosso projeto:
+
+  $ git clone https://github.com/Bivee/mojolicious-project-base.git meu_projeto
+
+
+Agora vamos acessar o workspace do projeto e mudar o nome padrão do projeto (MyAPP) para um outro nome escolhido com o seguinte comando:
+  
+  $ ack -l 'MyAPP' | xargs perl -pi -e 's/MyAPP/MeuProjeto/g'
+
+
+Estou usando o C<ack> acima com a opção C<-l> para pegar o nome de todos os arquivos quem contem o texto I<MyAPP>. Você pode usar o grep para isso ou instalar o Ack através do CPAN.
+
+
+=head3 O que esta base tem de diferente?
+
+Esta base tem algumas *melhorias* em comparação a base gerada pelo command line helper
 
 =over 
 
-=item Diretório e Namespace C<Controller>
+=item Namespace especifico para classes da camada C<Controller>
 
-Criamos um diretório e um namespace MyAPP::Controller para organizar melhor as 
-classes.
+Todas as classes da camada de controller ficam sub o namespace C<MyAPP::Controller>
 
+=item Classe base na camada de controller
 
-=item Diretório e Namespace C<Model>
-
-Criamos um diretório e um namespace MyAPP::Model onde as classes destinadas a este 
-fim poderão ser mantidas. O plus aqui é que usamos por padrão o L<ObjectDB> mas que
-pode ser substituído por qualquer ORM e adicionamos um loader para as classes do
-namespace model
+As classes herdam uma classe base que pode abrigar métodos comuns para todos os controllers e esta por sua vez herda de C<'Mojolicious::Controller'>
 
 
-=item Classe para a configuração das rotas
+=item Namespace especifico para classes da camada C<Model>
 
-As rotas são coisas bem importantes, principalmente nos dias de hoje, então damos 
-uma atenção especial a elas criando uma classe especial onde as mesmas podem ser
-configuradas de forma mais "particular" ao resto do startup da aplicação.
+As classes da camada Model ficam em um namespace especifico em C<MyAPP::Model>
 
+=item Configurações de rotas foram externalizadas [C<MyAPP::Rotes>]
 
-=item Layout padrão com jquery e twitter bootstrap
+Adicionamos uma camada para separar a configuração das rotas.
 
-O arquivo de layout padrão que antes era simples contendo somente a estrutura básica 
-do HTML agora possui o load do jquery e do twitter bootstrap.
+=item Layout padrão com C<JQuery> e C<Twitter Bootstrap>
+
+O layout padrão ja vem com os JQuery e o Twitter Bootstrap por padrão
+
+=item Plugin C<Mojolicious::Plugin::Authentication> pré-configurado
+
+Ja deixamos o plugin pré-configurado e com uma classe especifica para
+o tratamento da autenticação do usuário pelo mesmo.
 
 =back
 
+=head3 Veja mais
 
-=head3 Author 
+L<http://mojolicio.us>, L<http://bivee.com.br> e L<http://danielvinciguerra.com>
+
+
+=head3 Autor 
 
 2013 (c) Bivee L<http://bivee.com.br>
 
-Daniel Vinciguerra <daniel.vinciguerra at bivee.com.br>
+Daniel Vinciguerra - daniel.vinciguerra@bivee.com.br
 
 
 =head3 Copyright and License
