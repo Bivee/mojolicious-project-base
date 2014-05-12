@@ -8,30 +8,29 @@ sub load {
     die "error with route instance!\n"
       unless $route && $route->isa('Mojolicious::Routes');
 
-    # custom routes
-    my $custom = [
-        [ '/login' => {controller=>'Account', action=>'login'}],
-        [ '/register' => {controller=>'Account', action=>'register'}],
+    # account actions
+    $r->any('/login')
+      ->to( controller => 'Account', action => 'login' );
+
+    $r->any('/register')
+      ->to( controller => 'Account', action => 'register' );
+
+    $r->any('/forgot')
+      ->to( controller => 'Account', action => 'forgot' );
+
+    $r->any('/change/:token')
+      ->to( controller => 'Account', action => 'change', token => 0 );
 
 
-        # route for /profile
-        [ '/profile' => {controller=>'Home', action=>'profile', authenticated=>1}],
+    # home action
+    $r->any('/profile')->over( authenticated => 1 )
+      ->to( controller => 'Home', action => 'profile' );
 
-        # route for /user/edit/0
-        [ '/:controller/:action/:id' => {controller=>'Home', action=>'index', id=>0}],
+    # really!?
+    $r->any('/:controller/:action/:id')
+      ->to( controller => 'Home', action => 'index', id => 0 );
 
-
-        #add custom route here
-    ];
-
-    # add routes
-    map {
-        my ($key, $value) = @$_;
-        
-        $route->any($key)
-            ->over(authenticated => $value->{authenticated} || 0)
-            ->to( $value )
-    } @$custom;
+    #add custom route here
 
     return $route;
 }
