@@ -1,4 +1,4 @@
-package MyAPP::Routes;
+package MyApp::Routes;
 use Mojo::Base -strict;
 
 sub load {
@@ -8,26 +8,29 @@ sub load {
     die "error with route instance!\n"
       unless $route && $route->isa('Mojolicious::Routes');
 
+    # default route to controller
+    $route->get('/')->to('Home#index');
+
     # account actions
-    $r->any('/login')
+    $route->any('/login')
       ->to( controller => 'Account', action => 'login' );
 
-    $r->any('/register')
+    $route->any('/register')
       ->to( controller => 'Account', action => 'register' );
 
-    $r->any('/forgot')
+    $route->any('/forgot')
       ->to( controller => 'Account', action => 'forgot' );
 
-    $r->any('/change/:token')
+    $route->any('/change/:token')
       ->to( controller => 'Account', action => 'change', token => 0 );
 
 
     # home action
-    $r->any('/profile')->over( authenticated => 1 )
+    $route->any('/profile')->over( authenticated => 1 )
       ->to( controller => 'Home', action => 'profile' );
 
     # really!?
-    $r->any('/:controller/:action/:id')
+    $route->any('/:controller/:action/:id')
       ->to( controller => 'Home', action => 'index', id => 0 );
 
     #add custom route here
@@ -42,13 +45,13 @@ __END__
 
 =head1 NAME
 
-MyAPP::Routes - Route container for MyAPP app
+MyApp::Routes - Route container for MyApp app
 
 
 =head1 DESCRIPTION
 
 This class is a simple container where you will add all your custom routes 
-used at your MyAPP app.
+used at your MyApp app.
 
 
 =head2 Methods
@@ -56,11 +59,11 @@ used at your MyAPP app.
 
 =head3 load(L<Mojolicious::Routes> instance)
 
-    package MyAPP::Routes;
+    package MyApp::Routes;
 
     # config custom routes to Mojolicious::Routes
     my $r = $self->routes;
-    MyAPP::Routes->load($r);
+    MyApp::Routes->load($r);
 
 
 =head1 AUTHOR

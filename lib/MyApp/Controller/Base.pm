@@ -1,4 +1,4 @@
-package MyAPP::Controller::Base;
+package MyApp::Controller::Base;
 use Mojo::Base 'Mojolicious::Controller';
 
 use Try::Tiny;

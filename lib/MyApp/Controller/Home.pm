@@ -1,5 +1,5 @@
-package MyAPP::Controller::Home;
-use Mojo::Base 'MyAPP::Controller::Base';
+package MyApp::Controller::Home;
+use Mojo::Base 'MyApp::Controller::Base';
 
 sub index {
     my $self = shift;

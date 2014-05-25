@@ -1,5 +1,5 @@
-package MyAPP::Controller::Account;
-use Mojo::Base 'MyAPP::Controller::Base';
+package MyApp::Controller::Account;
+use Mojo::Base 'MyApp::Controller::Base';
 
 sub login {
     my $self = shift;

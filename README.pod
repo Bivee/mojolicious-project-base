@@ -24,12 +24,12 @@ Primeiro vamos clonar esse repositório e criar o workspace do nosso projeto:
   $ git clone https://github.com/Bivee/mojolicious-project-base.git meu_projeto
 
 
-Agora vamos acessar o workspace do projeto e mudar o nome padrão do projeto (MyAPP) para um outro nome escolhido com o seguinte comando:
+Agora vamos acessar o workspace do projeto e mudar o nome padrão do projeto (MyApp) para um outro nome escolhido com o seguinte comando:
   
-  $ ack -l 'MyAPP' | xargs perl -pi -e 's/MyAPP/MeuProjeto/g'
+  $ ack -l 'MyApp' | xargs perl -pi -e 's/MyApp/MeuProjeto/g'
 
 
-Estou usando o C<ack> acima com a opção C<-l> para pegar o nome de todos os arquivos quem contem o texto I<MyAPP>. Você pode usar o grep para isso ou instalar o Ack através do CPAN.
+Estou usando o C<ack> acima com a opção C<-l> para pegar o nome de todos os arquivos quem contem o texto I<MyApp>. Você pode usar o grep para isso ou instalar o Ack através do CPAN.
 
 
 =head3 O que esta base tem de diferente?
@@ -40,7 +40,7 @@ Esta base tem algumas *melhorias* em comparação a base gerada pelo command lin
 
 =item Namespace especifico para classes da camada C<Controller>
 
-Todas as classes da camada de controller ficam sub o namespace C<MyAPP::Controller>
+Todas as classes da camada de controller ficam sub o namespace C<MyApp::Controller>
 
 =item Classe base na camada de controller
 
@@ -49,9 +49,9 @@ As classes herdam uma classe base que pode abrigar métodos comuns para todos os
 
 =item Namespace especifico para classes da camada C<Model>
 
-As classes da camada Model ficam em um namespace especifico em C<MyAPP::Model>
+As classes da camada Model ficam em um namespace especifico em C<MyApp::Schema>
 
-=item Configurações de rotas foram externalizadas [C<MyAPP::Rotes>]
+=item Configurações de rotas foram externalizadas [C<MyApp::Rotes>]
 
 Adicionamos uma camada para separar a configuração das rotas.
 
