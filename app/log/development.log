@@ -1,0 +1,50 @@
+[Mon Apr 13 11:05:55 2015] [info] Listening at "http://*:3000"
+[Mon Apr 13 11:06:13 2015] [info] Listening at "http://*:3000"
+[Mon Apr 13 11:07:24 2015] [debug] Your secret passphrase needs to be changed
+[Mon Apr 13 11:07:24 2015] [debug] GET "/"
+[Mon Apr 13 11:07:24 2015] [debug] Routing to controller "App::Controller::Home" and action "index"
+[Mon Apr 13 11:07:24 2015] [debug] Action not found in controller
+[Mon Apr 13 11:07:24 2015] [debug] Rendering template "home/index.html.ep"
+[Mon Apr 13 11:07:24 2015] [error] Global symbol "$msg" requires explicit package name at template home/index.html.ep line 3, <DATA> line 2231.
+1: % layout 'default';
+2: % title 'Welcome';
+3: <h2><%= $msg %></h2>
+4: This page was generated from the template "templates/example/welcome.html.ep"
+5: and the layout "templates/layouts/default.html.ep",
+6: <%= link_to 'click here' => url_for %> to reload the page or
+7: <%= link_to 'here' => '/index.html' %> to move forward to a static page.
+
+[Mon Apr 13 11:07:24 2015] [debug] Template "exception.development.html.ep" not found
+[Mon Apr 13 11:07:24 2015] [debug] Template "exception.html.ep" not found
+[Mon Apr 13 11:07:24 2015] [debug] Rendering inline template "fd403ab55a4c875e35b42428816134c7"
+[Mon Apr 13 11:07:24 2015] [debug] Rendering inline template "dd85456cf9f44e1e43bebae130a7f9df"
+[Mon Apr 13 11:07:24 2015] [debug] 500 Internal Server Error (0.105395s, 9.488/s)
+[Mon Apr 13 11:09:07 2015] [info] Listening at "http://*:3000"
+[Mon Apr 13 11:09:10 2015] [debug] Your secret passphrase needs to be changed
+[Mon Apr 13 11:09:10 2015] [debug] GET "/"
+[Mon Apr 13 11:09:10 2015] [debug] Routing to controller "App::Controller::Home" and action "index"
+[Mon Apr 13 11:09:10 2015] [error] Can't locate object method "debug" via package "App" at lib/App/Controller/Home.pm line 8.
+
+[Mon Apr 13 11:09:10 2015] [debug] Template "exception.development.html.ep" not found
+[Mon Apr 13 11:09:10 2015] [debug] Template "exception.html.ep" not found
+[Mon Apr 13 11:09:10 2015] [debug] Rendering inline template "fd403ab55a4c875e35b42428816134c7"
+[Mon Apr 13 11:09:10 2015] [debug] Rendering inline template "dd85456cf9f44e1e43bebae130a7f9df"
+[Mon Apr 13 11:09:10 2015] [debug] 500 Internal Server Error (0.056300s, 17.762/s)
+[Mon Apr 13 11:09:26 2015] [debug] GET "/"
+[Mon Apr 13 11:09:26 2015] [debug] Routing to controller "App::Controller::Home" and action "index"
+[Mon Apr 13 11:09:26 2015] [error] Can't locate object method "debug" via package "App" at lib/App/Controller/Home.pm line 8.
+
+[Mon Apr 13 11:09:26 2015] [debug] Template "exception.development.html.ep" not found
+[Mon Apr 13 11:09:26 2015] [debug] Template "exception.html.ep" not found
+[Mon Apr 13 11:09:26 2015] [debug] Rendering cached inline template "fd403ab55a4c875e35b42428816134c7"
+[Mon Apr 13 11:09:26 2015] [debug] Rendering cached inline template "dd85456cf9f44e1e43bebae130a7f9df"
+[Mon Apr 13 11:09:27 2015] [debug] 500 Internal Server Error (0.021760s, 45.956/s)
+[Mon Apr 13 11:52:18 2015] [debug] GET "/"
+[Mon Apr 13 11:52:18 2015] [debug] Routing to controller "App::Controller::Home" and action "index"
+[Mon Apr 13 11:52:18 2015] [error] Can't locate object method "debug" via package "App" at lib/App/Controller/Home.pm line 8.
+
+[Mon Apr 13 11:52:18 2015] [debug] Template "exception.development.html.ep" not found
+[Mon Apr 13 11:52:18 2015] [debug] Template "exception.html.ep" not found
+[Mon Apr 13 11:52:18 2015] [debug] Rendering cached inline template "fd403ab55a4c875e35b42428816134c7"
+[Mon Apr 13 11:52:18 2015] [debug] Rendering cached inline template "dd85456cf9f44e1e43bebae130a7f9df"
+[Mon Apr 13 11:52:18 2015] [debug] 500 Internal Server Error (0.025017s, 39.973/s)
