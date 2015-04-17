@@ -48,3 +48,46 @@
 [Mon Apr 13 11:52:18 2015] [debug] Rendering cached inline template "fd403ab55a4c875e35b42428816134c7"
 [Mon Apr 13 11:52:18 2015] [debug] Rendering cached inline template "dd85456cf9f44e1e43bebae130a7f9df"
 [Mon Apr 13 11:52:18 2015] [debug] 500 Internal Server Error (0.025017s, 39.973/s)
+[Mon Apr 13 15:18:08 2015] [debug] GET "/"
+[Mon Apr 13 15:18:08 2015] [debug] Routing to controller "App::Controller::Home" and action "index"
+[Mon Apr 13 15:18:08 2015] [error] Can't locate object method "debug" via package "App" at lib/App/Controller/Home.pm line 8.
+
+[Mon Apr 13 15:18:08 2015] [debug] Template "exception.development.html.ep" not found
+[Mon Apr 13 15:18:08 2015] [debug] Template "exception.html.ep" not found
+[Mon Apr 13 15:18:08 2015] [debug] Rendering cached inline template "fd403ab55a4c875e35b42428816134c7"
+[Mon Apr 13 15:18:08 2015] [debug] Rendering cached inline template "dd85456cf9f44e1e43bebae130a7f9df"
+[Mon Apr 13 15:18:08 2015] [debug] 500 Internal Server Error (0.030465s, 32.825/s)
+[Mon Apr 13 15:18:15 2015] [debug] GET "/sdasdad"
+[Mon Apr 13 15:18:15 2015] [debug] Template "not_found.development.html.ep" not found
+[Mon Apr 13 15:18:15 2015] [debug] Template "not_found.html.ep" not found
+[Mon Apr 13 15:18:15 2015] [debug] Rendering inline template "fd403ab55a4c875e35b42428816134c7"
+[Mon Apr 13 15:18:15 2015] [debug] Rendering inline template "dd85456cf9f44e1e43bebae130a7f9df"
+[Mon Apr 13 15:18:15 2015] [debug] 404 Not Found (0.081330s, 12.296/s)
+[Mon Apr 13 15:18:49 2015] [debug] Your secret passphrase needs to be changed
+[Mon Apr 13 15:18:49 2015] [debug] GET "/sdasdad"
+[Mon Apr 13 15:18:49 2015] [debug] Template "not_found.development.html.ep" not found
+[Mon Apr 13 15:18:49 2015] [debug] Template "not_found.html.ep" not found
+[Mon Apr 13 15:18:49 2015] [debug] Rendering inline template "fd403ab55a4c875e35b42428816134c7"
+[Mon Apr 13 15:18:49 2015] [debug] Rendering inline template "dd85456cf9f44e1e43bebae130a7f9df"
+[Mon Apr 13 15:18:49 2015] [debug] 404 Not Found (0.053620s, 18.650/s)
+[Mon Apr 13 15:19:15 2015] [debug] GET "/sdasdad"
+[Mon Apr 13 15:19:15 2015] [debug] Template "not_found.development.html.ep" not found
+[Mon Apr 13 15:19:15 2015] [debug] Template "not_found.html.ep" not found
+[Mon Apr 13 15:19:15 2015] [debug] Rendering cached inline template "fd403ab55a4c875e35b42428816134c7"
+[Mon Apr 13 15:19:15 2015] [debug] Rendering cached inline template "dd85456cf9f44e1e43bebae130a7f9df"
+[Mon Apr 13 15:19:15 2015] [debug] 404 Not Found (0.012178s, 82.115/s)
+[Mon Apr 13 15:19:17 2015] [debug] GET "/"
+[Mon Apr 13 15:19:17 2015] [debug] Routing to controller "App::Controller::Home" and action "index"
+[Mon Apr 13 15:19:17 2015] [debug] Rendering template "home/index.html.ep"
+[Mon Apr 13 15:19:17 2015] [debug] Rendering template "layouts/default.html.ep"
+[Mon Apr 13 15:19:17 2015] [debug] 200 OK (0.008100s, 123.457/s)
+[Mon Apr 13 15:19:20 2015] [debug] GET "/"
+[Mon Apr 13 15:19:20 2015] [debug] Routing to controller "App::Controller::Home" and action "index"
+[Mon Apr 13 15:19:20 2015] [debug] Rendering cached template "home/index.html.ep"
+[Mon Apr 13 15:19:20 2015] [debug] Rendering cached template "layouts/default.html.ep"
+[Mon Apr 13 15:19:20 2015] [debug] 200 OK (0.003322s, 301.023/s)
+[Mon Apr 13 16:28:06 2015] [debug] GET "/"
+[Mon Apr 13 16:28:06 2015] [debug] Routing to controller "App::Controller::Home" and action "index"
+[Mon Apr 13 16:28:06 2015] [debug] Rendering cached template "home/index.html.ep"
+[Mon Apr 13 16:28:06 2015] [debug] Rendering cached template "layouts/default.html.ep"
+[Mon Apr 13 16:28:06 2015] [debug] 200 OK (0.004039s, 247.586/s)
