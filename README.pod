@@ -3,75 +3,35 @@
 
 =encoding utf8
 
-=head2 Bivee Mojolicious WebApp Base
 
-Este repositório contem o esqueleto de um projeto mojolicious alterado para seguir um padrão interno dos projetos da empresa Bivee e para simplificar o start de projetos.
+=head2 Bivee Mojolicious Project Base
 
-A ideia é montar uma arquitetura, plugins, configurações, classes, etc..  que são geralmente criadas no começo de todo projeto para que o desenvolvedor gaste menos tempo customizando e configurando a base que o command line helper do mojolicious cria por padrão.
-
-
-=head3 Porque tudo isso?
-
-Notamos que havia uma serie de alterações comuns que fazíamos em todo projeto de desenvolvimento web e resolvemos criar um bootstrap mais efetivo baseado na que é gerada pelo command line helper do Mojolicious para agilizar o processo.
+This is a base of web app used by L<Bivee|http://bivee.com.br/>.
 
 
-=head3 Como usar?
+=head3 How to use?
 
-Como podemos utilizar essa base e iniciar nosso projeto de forma mais rápida:
+First you have to make a git repository clone:
 
-Primeiro vamos clonar esse repositório e criar o workspace do nosso projeto:
+  $ git clone https://github.com/Bivee/mojolicious-project-base.git [project_name]
 
-  $ git clone https://github.com/Bivee/mojolicious-project-base.git meu_projeto
-
-
-Agora vamos acessar o workspace do projeto e mudar o nome padrão do projeto (MyApp) para um outro nome escolhido com o seguinte comando:
+Now you can replace class packages name using C<grep> or C<< ack-grep >>:
   
   $ ack -l 'MyApp' | xargs perl -pi -e 's/MyApp/MeuProjeto/g'
+  
+... or using C<grep>:
+  
+  $ grep -ril MyApp | xargs perl -pi -e 's/MyApp/MeuProjeto/g'
 
 
-Estou usando o C<ack> acima com a opção C<-l> para pegar o nome de todos os arquivos quem contem o texto I<MyApp>. Você pode usar o grep para isso ou instalar o Ack através do CPAN.
+=head3 What's direrent from original skeleton app?
+
+We delegate Route and Helper declarations to specific classes, for example.
+
+Some other things by default like a basic authentication was added to save more time.
 
 
-=head3 O que esta base tem de diferente?
-
-Esta base tem algumas *melhorias* em comparação a base gerada pelo command line helper
-
-=over 
-
-=item Namespace especifico para classes da camada C<Controller>
-
-Todas as classes da camada de controller ficam sub o namespace C<MyApp::Controller>
-
-=item Classe base na camada de controller
-
-As classes herdam uma classe base que pode abrigar métodos comuns para todos os controllers e esta por sua vez herda de C<'Mojolicious::Controller'>
-
-
-=item Namespace especifico para classes da camada C<Model>
-
-As classes da camada Model ficam em um namespace especifico em C<MyApp::Schema>
-
-=item Configurações de rotas foram externalizadas [C<MyApp::Rotes>]
-
-Adicionamos uma camada para separar a configuração das rotas.
-
-=item Layout padrão com C<JQuery> e C<Twitter Bootstrap>
-
-O layout padrão ja vem com os JQuery e o Twitter Bootstrap por padrão
-
-=item Plugin C<Mojolicious::Plugin::Authentication> pré-configurado
-
-Ja deixamos o plugin pré-configurado e com uma classe especifica para
-o tratamento da autenticação do usuário pelo mesmo.
-
-=back
-
-=head3 Veja mais
-
-L<http://mojolicio.us>, L<http://bivee.com.br> e L<http://danielvinciguerra.com>
-
-
-=head3 Autor 
+=head3 Authors
 
 2013 (c) Bivee L<http://bivee.com.br>
 
@@ -82,7 +42,9 @@ Daniel Vinciguerra - daniel.vinciguerra@bivee.com.br
 
 This software is copyright (c) 2013 by Bivee.
 
-This is a free software; you can redistribute it and/or modify it under the same terms of Perl 5 programming 
-languagem system itself.
+This is a free and open source software distributed as same terms of Perl 5 license.
 
-=cut
+
+=head3 See more
+
+L<http://mojolicio.us>, L<http://bivee.com.br> e L<http://danielvinciguerra.com>
